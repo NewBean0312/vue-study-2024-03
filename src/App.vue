@@ -1,16 +1,10 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <div>
-    <h4>{{ products[0] }}</h4>
-    <p>50만원</p>
+  <div class="menu">
+    <a v-for="(menu, i) in menuData" :key="i">{{ menu }}</a>
   </div>
-  <div>
-    <h4>{{ products[1] }}</h4>
-    <p>60만원</p>
-  </div>
-  <div>
-    <h4>{{ products[2] }}</h4>
-    <p>70만원</p>
+  <div  v-for="(product, i) in productData" :key="i">
+    <h4>{{ productData[i] }}</h4>
+    <p>50 만원</p>
   </div>
 </template>
 
@@ -20,7 +14,8 @@ export default {
   data() {
     return {
       // 데이터 보관 (데이터는 object 자료형으로 저장)
-      products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
+      menuData : ["Home", "Shop", "About"],
+      productData: ["역삼동원룸", "천호동원룸", "마포구원룸"],
     };
   },
   components: {},
@@ -34,6 +29,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.menu {
+  background: darkslateblue;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.menu a {
+  color: #fff;
+  padding: 10px;
 }
 </style>
